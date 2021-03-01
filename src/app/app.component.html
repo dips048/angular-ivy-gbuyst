@@ -1,3 +1,12 @@
-<p>
-	Start editing to see some magic happen :)
-</p>
+<h1>hello</h1>
+<h1>shopping List</h1>
+<ul>
+  <li *ngFor="let shopping of shoppingItems$ | async">
+    {{ shopping.name }}
+    <button (click)="deleteItem(shopping.id)"> X </button>
+  </li>
+</ul>
+<form (ngSubmit)="addItem()">
+  <input type="text" [(ngModel)]="newShoppingItem.name" placeholder="name" name="itemName">
+  <button type="submit"> + </button>
+</form>
